@@ -35,36 +35,36 @@ if c.Validation.HasErrors() {
 //
 //
 //
-func (c App) Dominiosfraude() revel.Result{
+func (c App) Dominiosfraude(hostname string) revel.Result{
     return c.Render()
 }
 //
 //
 //
-func (c App) Divulgadados() revel.Result{
+func (c App) Divulgadados(hostname string) revel.Result{
     return c.Render()
 }
 //
 //
 //
-func (c App) Ataquearede() revel.Result{
+func (c App) Ataquearede(hostname string) revel.Result{
     return c.Render()
 }
 //
 //
 //
-func (c App) Dnsmalicioso() revel.Result{
+func (c App) Dnsmalicioso(hostname string) revel.Result{
     return c.Render()
 }
 //
 //
 //
-func (c App) Ddos() revel.Result{
+func (c App) Ddos(hostname string) revel.Result{
     return c.Render()
 }
 //
 //
 //
-func (c App) Drdos() revel.Result{
+func (c App) Drdos(hostname string) revel.Result{
     return c.Render()
 }
