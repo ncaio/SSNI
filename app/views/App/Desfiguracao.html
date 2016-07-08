@@ -1,0 +1,51 @@
+<!-- -->
+<!-- -->
+<!-- -->
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+<!-- -->
+<!-- -->
+<!-- -->
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+        <h1>Desfiguracao de pagina {{.hostname}}</h1>
+      <p></p>
+    </div>
+  </div>
+</header>
+<!-- -->
+<!-- -->
+<!-- -->
+<script type="text/javascript">
+</script>
+<!-- -->
+<!-- -->
+<!-- -->
+<div class="container">
+  <div class="row">
+      <label for="hostname">HOSTNAME:</label>
+      <input type="text" id="hostname" placeholder="{{.hostname}}"> 
+      <br></br>
+      <label for="network_contact">NETWORK CONTACT:</label>
+      <input type="email" id="network_contact" placeholder="abuse@domain.com">
+      <br></br>
+      <label for="domain_contact">DOMAIN CONTACT:</label>
+      <input type="email" id="domain_contact" placeholder="abuse@domain.com">
+      <br></br>
+      <label for="url_defacement">URL DESFIGURADA:</label>
+      <input type="url" id="url_defacement" placeholder="http://url.domain.tdl">
+      <br></br>
+      <label for="uploadimg">Screenshot:</label>
+      <input type="file" id="uploadimg" accept="image/*">
+      <br></br>
+      <input type="submit">
+      <br></br>
+      <a href="/">Back to form</a>
+    <div class="span6">
+      {{template "flash.html" .}}
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}

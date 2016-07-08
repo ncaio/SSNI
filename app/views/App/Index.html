@@ -1,0 +1,72 @@
+<!-- -->
+<!-- -->
+<!-- -->
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+<!-- -->
+<!-- -->
+<!-- -->
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+        <h1>{{.msg}}</h1>
+      <p></p>
+    </div>
+  </div>
+</header>
+<!-- -->
+<!-- -->
+<!-- -->
+<script type="text/javascript">
+$(document).ready(function(){
+$('#tipos').on('change', function() {
+host = $("#hostname").val();
+var self = $(this);
+if(self.val() == 'desfiguracao'){
+    document.location.href = "/App/Desfiguracao?hostname="+host+"";
+}else if(self.val() == 'dominiosfraude'){
+    document.location.href = '/App/Dominiosfraude';
+}else if(self.val() == 'divulgadados'){
+    document.location.href = '/App/Divulgadados';
+}else if(self.val() == 'ataquearede'){
+    document.location.href = '/App/Ataquearede';
+}else if(self.val() == 'dnsmalicioso'){
+    document.location.href = '/App/Dnsmalicioso';
+}else if(self.val() == 'ddos'){
+    document.location.href = '/App/Ddos';
+}else if(self.val() == 'drdos'){
+    document.location.href = '/App/Drdos';
+}
+})
+});
+</script>
+<!-- -->
+<!-- -->
+<!-- -->
+<div class="container">
+  <div class="row">
+      {{with $field := field "hostname" .}}
+      <input style="height:40px;font-size:14pt;" type="text" id="hostname" name="{{$field.Name}}" value="{{$field.Flash}}" placeholder="hostname" required>
+      {{end}}
+        <select id="tipos">
+            <option value="null">Selecionar tipo</option>
+            <option value="desfiguracao">Desfiguracao de pagina</option>
+            <option value="dominiosfraude">Dominios utilizados para fraudes</option>
+            <option value="divulgadados">Divulgacao de dados pessoais sensiveis</option>
+            <option value="ataquearede">Ataques a rede em geral</option>
+            <option value="dnsmalicioso">Servidor DNS malicioso</option>
+            <option value="ddos">DDoS por botnet sem spoofing</option>
+            <option value="drdos">Ataque de negacao de servico distribuido com uso de amplificacao (DRDoS)</option>
+            <option value="artefatos">Hospedagem de artefatos maliciosos</option>
+            <option value="phishing">Phishing simples ou com geolocalizacao</option>
+            <option value="phishingpharming">Phishing com Pharming</option>
+            <option value="phishingspam">Servidor enviando phishing scam</option>
+            <option value="comandoecontrole">Servidor de comando e controle de RAT</option>
+        </select>
+    <div class="span6">
+      {{template "flash.html" .}}
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}

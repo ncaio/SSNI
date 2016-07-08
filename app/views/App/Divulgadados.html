@@ -1,0 +1,46 @@
+<!-- -->
+<!-- -->
+<!-- -->
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+<!-- -->
+<!-- -->
+<!-- -->
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+        <h1>Dados pessois sensiveis divulgados em seu site {{.hostname}}</h1>
+      <p></p>
+    </div>
+  </div>
+</header>
+<!-- -->
+<!-- -->
+<!-- -->
+<script type="text/javascript">
+</script>
+<!-- -->
+<!-- -->
+<!-- -->
+<div class="container">
+  <div class="row">
+      <label for="hostname">HOSTNAME:</label>
+      <input type="text" id="hostname" placeholder="{{.hostname}}"> 
+      <br></br>
+      <label for="ip">IP ADDRESS:</label>
+      <input type="text" id="ip" placeholder="{{.hostname}}">
+      <br></br>
+      <label for="network_contact">NETWORK CONTACT:</label>
+      <input type="email" id="network_contact" placeholder="abuse@domain.com">
+      <br></br>
+      <label for="url_pii">URL DADOS SENSIVEIS:</label>
+      <input type="url" id="url_pii" placeholder="http://url.domain">
+      <br></br>
+      <a href="/">Back to form</a>
+    <div class="span6">
+      {{template "flash.html" .}}
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}
