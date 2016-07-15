@@ -9,7 +9,7 @@
 <header class="jumbotron" style="background-color:#A9F16C">
   <div class="container">
     <div class="row">
-        <h1>{{.msg}}</h1>
+        <h1>{{.msg}} - {{.org_name}}</h1>
       <p></p>
     </div>
   </div>
@@ -25,11 +25,11 @@ var self = $(this);
 if(self.val() == 'desfiguracao'){
     document.location.href = "/App/Desfiguracao?hostname="+host+"";
 }else if(self.val() == 'dominiosfraude'){
-    document.location.href = '/App/Dominiosfraude';
+    document.location.href = "/App/Dominiosfraude?hostname="+host+"";
 }else if(self.val() == 'divulgadados'){
-    document.location.href = '/App/Divulgadados';
+    document.location.href = "/App/Divulgadados?hostname="+host+"";
 }else if(self.val() == 'ataquearede'){
-    document.location.href = '/App/Ataquearede';
+    document.location.href = "/App/Ataquearede?hostname="+host+"";
 }else if(self.val() == 'dnsmalicioso'){
     document.location.href = '/App/Dnsmalicioso';
 }else if(self.val() == 'ddos'){

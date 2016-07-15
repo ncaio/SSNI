@@ -25,10 +25,10 @@
 <div class="container">
   <div class="row">
       <label for="ip">IP ADDRESS:</label>
-      <input type="text" id="ip" placeholder="{{.hostname}}"> 
+      <input type="text" id="ip" value="{{.ipaddr}}"> 
       <br></br>
       <label for="network_contact">NETWORK CONTACT:</label>
-      <input type="email" id="network_contact" placeholder="abuse@domain.com">
+      <input type="email" id="network_contact" value="{{.netcontactlist}}">
       <br></br>
       <label for="tiposdeataque">ATTACK TYPE:</label>
       <select id=tiposdeataque>
@@ -36,17 +36,24 @@
       <option value="varredura">Ataque de varredura de portas</option>
       <option value="null">Ataque de forca bruta SSH</option>
       <option value="null">Ataque de forca bruta SMTP</option>
+      <option value="null">Ataque de forca bruta SMTPS</option>
       <option value="null">Ataque de forca bruta POP3</option>
+      <option value="null">Ataque de forca bruta POP3S</option>
       <option value="null">Ataque de forca bruta IMAP</option>
+      <option value="null">Ataque de forca bruta IMAPS</option>
       <option value="null">Ataque de forca bruta TELNET</option>
       <option value="null">Tentativas de exploracao de vulnerabilidades conhecidas em servidores Web</option>
       </select>
       <br></br>
       <label for="timezone">FUSO HORARIO:</label>
-      <input type="text" id="timezone" placeholder="(+,-)hh:mm,hhmm,hh">
+      <select id="timezone">
+      <option value="null">Selecionar formato</option>
+      <option value="null">-hh:mm</option>
+      <option value="null">+hh:mm</option>
+      </select>
       <br></br>
-      <textarea rows="10" cols="132">
-      </textarea>
+<textarea rows="10" cols="132">
+</textarea>
       <br></br>
       <input type="submit">
       <br></br>
