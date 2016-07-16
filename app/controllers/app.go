@@ -134,19 +134,28 @@ func (c App) Ataquearede(hostname string) revel.Result {
 //
 //
 func (c App) Dnsmalicioso(hostname string) revel.Result {
-	return c.Render()
+	ipaddr := lookup(hostname)
+	netcontact, _ := fwhois(ipaddr)
+	netcontactlist := strings.Join(netcontact, ",")
+	return c.Render(hostname, ipaddr, netcontactlist)
 }
 
 //
 //
 //
 func (c App) Ddos(hostname string) revel.Result {
-	return c.Render()
+	ipaddr := lookup(hostname)
+	netcontact, _ := fwhois(ipaddr)
+	netcontactlist := strings.Join(netcontact, ",")
+	return c.Render(hostname, ipaddr, netcontactlist)
 }
 
 //
 //
 //
 func (c App) Drdos(hostname string) revel.Result {
-	return c.Render()
+	ipaddr := lookup(hostname)
+	netcontact, _ := fwhois(ipaddr)
+	netcontactlist := strings.Join(netcontact, ",")
+	return c.Render(hostname, ipaddr, netcontactlist)
 }
