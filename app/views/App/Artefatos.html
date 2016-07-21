@@ -1,0 +1,68 @@
+<!-- -->
+<!-- -->
+<!-- -->
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+<!-- -->
+<!-- -->
+<!-- -->
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+        <h1>Artefato malicioso hospedado em {{.hostname}} -> {{.ipaddr}}.</h1>
+      <p></p>
+    </div>
+  </div>
+</header>
+<!-- -->
+<!-- -->
+<!-- -->
+<script type="text/javascript">
+</script>
+<!-- -->
+<!-- -->
+<!-- -->
+<div class="container">
+  <div class="row">
+      <label for="ip">IP ADDRESS:</label>
+      <input type="text" id="ip" value="{{.ipaddr}}"> 
+      <br></br>
+      <label for="network_contact">NETWORK CONTACT:</label>
+      <input type="email" id="network_contact" value="{{.netcontactlist}}">
+      <br></br>
+      <label for="tiposdeataque">ARTIFACT DESCRIPTION:</label>
+      <select id=tiposdeataque>
+      <option value="null">Selecionar tipo</option>
+      <option value="null">Phishing / Scam</option>
+      <option value="null">Remote File Inclusion - RFI</option>
+      <option value="null">Proxy Pac</option>
+      <option value="null">Cross-Site Request Forgery - CSFR</option>
+      </select>
+      <br></br>
+      <label for="timezone">FUSO HORARIO:</label>
+      <select id="timezone">
+      <option value="null">Selecionar formato</option>
+      <option value="null">-hh:mm</option>
+      <option value="null">+hh:mm</option>
+      <option value="null">-hhmm</option>
+      <option value="null">+hhmm</option>
+      <option value="null">-hh</option>
+      <option value="null">+hh</option>
+      </select>
+      <br></br>
+      <label for="url_artifact">URL ARTIFACT:</label>
+      <input type="url" id="url_artifact" placeholder="http://url.artifact">
+      <br></br>
+<textarea rows="10" cols="132">
+</textarea>
+      <br></br>
+      <input type="submit">
+      <br></br>
+      <a href="/">Back to form</a>
+    <div class="span6">
+      {{template "flash.html" .}}
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}
