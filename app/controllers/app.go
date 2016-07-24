@@ -169,3 +169,13 @@ func (c App) Artefatos(hostname string) revel.Result {
 	netcontactlist := strings.Join(netcontact, ",")
 	return c.Render(hostname, ipaddr, netcontactlist)
 }
+
+//
+//
+//
+func (c App) Phishing(hostname string) revel.Result {
+	ipaddr := lookup(hostname)
+	netcontact, _ := fwhois(ipaddr)
+	netcontactlist := strings.Join(netcontact, ",")
+	return c.Render(hostname, ipaddr, netcontactlist)
+}

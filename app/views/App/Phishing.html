@@ -1,0 +1,53 @@
+<!-- -->
+<!-- -->
+<!-- -->
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+<!-- -->
+<!-- -->
+<!-- -->
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+	    <h1>Pagina falsa hospedada em sua infraestrutura ( {{.hostname}} -> {{.ipaddr}})</h1>
+      <p></p>
+    </div>
+  </div>
+</header>
+<!-- -->
+<!-- -->
+<!-- -->
+<script type="text/javascript">
+</script>
+<!-- -->
+<!-- -->
+<!-- -->
+<div class="container">
+  <div class="row">
+      <label for="hostname">HOSTNAME:</label>
+      <input type="text" id="hostname" value="{{.hostname}}"> 
+      <br></br>
+      <label for="ip">IP ADDRESS:</label>
+      <input type="text" id="ip" value="{{.ipaddr}}">
+      <br></br>
+      <label for="network_contact">NETWORK CONTACT:</label>
+      <input type="email" id="network_contact" value="{{.netcontactlist}}">
+      <br></br>
+      <label for="url_pii">URL PHISHING:</label>
+      <input type="url" id="url_pii" placeholder="http://url.domain">
+      <br></br>
+      <label for="url_oficial">URL OFICIAL:</label>
+      <input type="url" id="url_pii" placeholder="http://url.domain">
+      <br></br>
+      <label for="note_geo">Observacao acerca de geolocalizacao:</label>
+      <textarea rows="5" cols="124" id="note_geo">
+      </textarea>
+      <br></br>
+      <a href="/">Back to form</a>
+    <div class="span6">
+      {{template "flash.html" .}}
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}
