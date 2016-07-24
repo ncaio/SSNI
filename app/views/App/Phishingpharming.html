@@ -1,0 +1,55 @@
+<!-- -->
+<!-- -->
+<!-- -->
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+<!-- -->
+<!-- -->
+<!-- -->
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+	    <h1>Pagina falsa da ORGANIZATION_NAME hospedada em {{.ipaddr}}</h1>
+      <p></p>
+    </div>
+  </div>
+</header>
+<!-- -->
+<!-- -->
+<!-- -->
+<script type="text/javascript">
+</script>
+<!-- -->
+<!-- -->
+<!-- -->
+<div class="container">
+  <div class="row">
+      <label for="hostname">HOSTNAME:</label>
+      <input type="text" id="hostname" value="{{.hostname}}"> 
+      <br></br>
+      <label for="ip">IP ADDRESS:</label>
+      <input type="text" id="ip" value="{{.ipaddr}}">
+      <br></br>
+      <label for="network_contact">NETWORK CONTACT:</label>
+      <input type="email" id="network_contact" value="{{.netcontactlist}}">
+      <br></br>
+      <label for="hostoficial">HOSTNAME OFFICIAL:</label>
+      <input type="text" id="hostoficial" placeholder="registro.dominio.com">
+      <br></br>
+      <label for="url_pii">URL PHISHING:</label>
+      <input type="url" id="url_pii" placeholder="http://url.domain">
+      <br></br>
+      <label for="url_oficial">URL OFICIAL:</label>
+      <input type="url" id="url_pii" placeholder="http://url.domain">
+      <br></br>
+      <label for="port">Porta utilizada na URL do phishing</label>
+      <input type="number" id="port">
+      <br></br>
+      <a href="/">Back to form</a>
+    <div class="span6">
+      {{template "flash.html" .}}
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}
