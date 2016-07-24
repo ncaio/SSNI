@@ -199,3 +199,13 @@ func (c App) Phishingspam(hostname string) revel.Result {
 	netcontactlist := strings.Join(netcontact, ",")
 	return c.Render(hostname, ipaddr, netcontactlist)
 }
+
+//
+//
+//
+func (c App) Comandoecontrole(hostname string) revel.Result {
+	ipaddr := lookup(hostname)
+	netcontact, _ := fwhois(ipaddr)
+	netcontactlist := strings.Join(netcontact, ",")
+	return c.Render(hostname, ipaddr, netcontactlist)
+}

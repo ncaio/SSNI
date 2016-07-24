@@ -1,0 +1,67 @@
+<!-- -->
+<!-- -->
+<!-- -->
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+<!-- -->
+<!-- -->
+<!-- -->
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+	    <h1>Comando e Controle de RAT em {{.ipaddr}}.</h1>
+      <p></p>
+    </div>
+  </div>
+</header>
+<!-- -->
+<!-- -->
+<!-- -->
+<script type="text/javascript">
+</script>
+<!-- -->
+<!-- -->
+<!-- -->
+<div class="container">
+  <div class="row">
+      <label for="ip">IP ADDRESS:</label>
+      <input type="text" id="ip" value="{{.ipaddr}}"> 
+      <br></br>
+      <label for="network_contact">NETWORK CONTACT:</label>
+      <input type="email" id="network_contact" value="{{.netcontactlist}}">
+      <br></br>
+      <label for="port">PORTA:</label>
+      <input id="port" type="number">
+      <br></br>
+      <label for="protocol">PROTOCOLO:</label>
+      <select>
+	      <option>UDP</option>
+	      <option>TCP</option>
+      </select>
+      <br></br>
+      <label for="timezone">FUSO HORARIO:</label>
+      <select id="timezone">
+      <option value="null">Selecionar formato</option>
+      <option value="null">-hh:mm</option>
+      <option value="null">+hh:mm</option>
+      <option value="null">-hhmm</option>
+      <option value="null">+hhmm</option>
+      <option value="null">-hh</option>
+      <option value="null">+hh</option>
+      </select>
+      <br></br>
+      <label for="log">LOG:</label>
+      <br></br>
+<textarea id="log" rows="10" cols="132">
+</textarea>
+      <br></br>
+      <input type="submit">
+      <br></br>
+      <a href="/">Back to form</a>
+    <div class="span6">
+      {{template "flash.html" .}}
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}
