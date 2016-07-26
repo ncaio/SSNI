@@ -1,11 +1,14 @@
-[variaveis]
+[org]
 organizationname = "Centro de respostas a incidentes"
 organizationdescription = "Breve descritivo da instituicao"
 signature = "Centro de respostas a incidentes"
 [mail]
 sender = "registrobr@domain.com.br"
 national_csirt = "cert@cert.br"
-[smtpauth]
+[smtp]
+auth = "yes"
 host = "10.2.1.11"
 user = "test"
 passwd = "password"
+[whois]
+server = "whois.registro.br"
