@@ -1,0 +1,10 @@
+[variaveis]
+organizationname = "Centro de respostas a incidentes"
+organizationdescription = "Breve descritivo da instituicao"
+national_csirt = "cert@cert.br"
+signature = "Centro de respostas a incidentes"
+sender = "registrobr@domain.com.br"
+[smtpauth]
+host = "10.2.1.11"
+user = "test"
+passwd = "password"
