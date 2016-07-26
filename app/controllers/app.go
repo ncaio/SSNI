@@ -189,10 +189,15 @@ func (c App) Phishing(hostname string) revel.Result {
 //
 //
 func (c App) Phishingpharming(hostname string) revel.Result {
+	config, err := toml.LoadFile("/home/go/src/SSNI/conf/config.toml")
+	if err != nil {
+		fmt.Println("Error: ", err.Error())
+	}
+	org_name := config.Get("org.organizationname").(string)
 	ipaddr := lookup(hostname)
 	netcontact, _ := fwhois(ipaddr)
 	netcontactlist := strings.Join(netcontact, ",")
-	return c.Render(hostname, ipaddr, netcontactlist)
+	return c.Render(hostname, ipaddr, netcontactlist, org_name)
 }
 
 //
