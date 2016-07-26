@@ -64,7 +64,12 @@ func (c App) Index() revel.Result {
 //
 //
 func fwhois(host string) ([]string, string) {
-	result, _ := whois.Whois(host, "whois.registro.br")
+	config, err := toml.LoadFile("/home/go/src/SSNI/conf/config.toml")
+	if err != nil {
+		fmt.Println("Error: ", err.Error())
+	}
+	server := config.Get("whois.server").(string)
+	result, _ := whois.Whois(host, server)
 	line := strings.Split(result, "\n")
 	var mail []string
 	var domain string
