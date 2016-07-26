@@ -9,6 +9,7 @@ package controllers
 import (
 	"fmt"
 	"github.com/likexian/whois-go"
+	"github.com/pelletier/go-toml"
 	"github.com/revel/revel"
 	_ "log"
 	"net"
@@ -50,8 +51,12 @@ func lookup(address string) (resolv string) {
 //
 //
 func (c App) Index() revel.Result {
+	config, err := toml.LoadFile("/home/go/src/SSNI/conf/config.toml")
+	if err != nil {
+		fmt.Println("Error: ", err.Error())
+	}
 	msg := "SSNI"
-	org_name := "ORGANIZATION_NAME"
+	org_name := config.Get("org.organizationname").(string)
 	return c.Render(msg, org_name)
 }
 
