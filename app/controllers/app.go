@@ -51,7 +51,7 @@ func lookup(address string) (resolv string) {
 //
 //
 func (c App) Index() revel.Result {
-	config, err := toml.LoadFile("/home/go/src/SSNI/conf/config.toml")
+	config, err := toml.LoadFile("/etc/config.toml")
 	if err != nil {
 		fmt.Println("Error: ", err.Error())
 	}
@@ -64,7 +64,7 @@ func (c App) Index() revel.Result {
 //
 //
 func fwhois(host string) ([]string, string) {
-	config, err := toml.LoadFile("/home/go/src/SSNI/conf/config.toml")
+	config, err := toml.LoadFile("/etc/config.toml")
 	if err != nil {
 		fmt.Println("Error: ", err.Error())
 	}
@@ -194,7 +194,7 @@ func (c App) Phishing(hostname string) revel.Result {
 //
 //
 func (c App) Phishingpharming(hostname string) revel.Result {
-	config, err := toml.LoadFile("/home/go/src/SSNI/conf/config.toml")
+	config, err := toml.LoadFile("/etc/config.toml")
 	if err != nil {
 		fmt.Println("Error: ", err.Error())
 	}
